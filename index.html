@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda expedientes</title>
+
+     <!-- STYLES -->
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="assets/bootstrap4/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Fontawesome -->
+    <script src="assets/fontawesome5/js/solid.min.js"></script>
+    <script src="assets/fontawesome5/js/fontawesome.min.js"></script>
+</head>
+<body>
+    <div class="container pt-2">
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+                <form id= "formulario" action="needs-validation" novalidate>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12 col-md-4 form-label">Nombre:</label>
+                        <div class="col-sm-12 col-md-8">
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre de la perosna" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12 col-md-4 form-label">Expediente de control:</label>
+                        <div class="col-sm-12 col-md-8">
+                            <input type="text" class="form-control" id="expediente" placeholder="No. de expediente" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12 col-md-4 form-label">Causa penal:</label>
+                        <div class="col-sm-12 col-md-8">
+                            <input type="text" class="form-control" id="causa" placeholder="Causa penal" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12 col-md-4 form-label">SIPE:</label>
+                        <div class="col-sm-12 col-md-8">
+                            <input type="text" class="form-control" id="sipe" placeholder="SIPE" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12 col-md-4 form-label">Teléfono 1:</label>
+                        <div class="col-sm-12 col-md-8">
+                            <input type="text" class="form-control" id="telefono1" placeholder="Teléfono principal" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12 col-md-4 form-label">Teléfono 2:</label>
+                        <div class="col-sm-12 col-md-8">
+                            <input type="text" class="form-control" id="telefono2" placeholder="Teléfono secundario">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="" class="col-sm-12 col-md-4 form-label">Email:</label>
+                        <div class="col-sm-12 col-md-8">
+                            <input type="email" class="form-control" id="email" placeholder="Correo Electrónico">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comentarios">Comentarios:</label>
+                        <textarea class="form-control" id="comentarios" rows="3"></textarea>
+                      </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="#" class="btn btn-block btn-success" id="btnGuardar" onclick="guardarInfo()">Guardar</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="col-sm-12 col-md-7">
+                <div class="row">
+                    <div class="col-4">
+                        <table class="table" id="expedientes">
+                            <thead>
+                                <tr>
+                                    <th>Expediente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--Listado-->
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="col-8">
+                        <div id="informacion"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/jquery/jquery-3.2.1.slim.min.js"></script>
+    <script src="assets/bootstrap4/js/bootstrap.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
