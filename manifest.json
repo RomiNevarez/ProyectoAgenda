@@ -3,7 +3,8 @@
     "name": "Proyecto Agenda",
     "start_url": "/",
     "background_color":  "#010068",
-    "theme_color": "standalone",
+    "theme_color": "#010068",
+    "display": "#010068",
     "orientation": "portrait",
     "icons": [
         {
