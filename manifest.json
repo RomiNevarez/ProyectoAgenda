@@ -1,0 +1,30 @@
+{
+    "short_name": "Proyecto",
+    "name": "Proyecto Agenda",
+    "start_url": "/",
+    "background_color":  "#010068",
+    "theme_color": "standalone",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "assets/icons/UAS_logo_72.png",
+            "type": "image/png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "assets/icons/UAS_logo_128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "assets/icons/UAS_logo_256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "assets/icons/UAS_logo_512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}

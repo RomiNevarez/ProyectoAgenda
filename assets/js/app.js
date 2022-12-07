@@ -74,7 +74,8 @@ function mostrar(expediente) {
                                 '<div class="row"><div class="col-4">Correo:</div><div class="col"> '+dato.email+'</div></div>' +
                                 '<div class="row"><div class="col-4">SIPE: </div><div class="col">'+dato.sipe+'</div></div>' +
                                 '<div class="row"><div class="col-4">Comentarios:</div><div class="col"></div></div>' +
-                                '<p>'+dato.comentario+'</p>';
+                                '<p>'+dato.comentario+'</p>'; +
+                                'div class="row"><div class = col-12"><a href="#" class="btn btn-block btn-danger" onclick="borrarExpediente(\'' + expediente + '\', \'' + dato.expediente + '\')">Borrar</a></div></div>';
             
             $('#informacion').html(informacion);
         }
@@ -83,6 +84,11 @@ function mostrar(expediente) {
 }
 
 function guardarFirestore(expediente){
+    defaultFirestore.collection("expedientes").add(expediente).then((docRef) => {
+        console.log("Expediente agregado con el id: ", docRef.id);
+    }).catch((error) => {
+        console.error("Error al agregar al expediente: ", error);
+    });
 
 }
 
@@ -103,6 +109,15 @@ async function obtenerExpediente(id){
     })
 
     return expediente;
+}
+function borrarExpediente(expediente) {
+    defaultFirestore.collection('expedientes').doc(expediente).delete().then(res => {
+        console.log("Expediente eliminado");
+        cargarBD();
+    })
+    .error(err => {
+        console.log("Error al borrar expediente: ", err);
+    });
 }
 
 function validarFormulario(){
@@ -170,3 +185,15 @@ nst informacion = '<span>Expediente: '+dato.expediente+'</span><br>' +
                             '<span>Comentarios:</span><br>' +
                             '<p>'+dato.comentario+'</p>';
                             */
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", f => {
+        navigator.serviceWorker.register('/sw.js')
+                                    .then(res => {
+                                        console.log("ServiceWorker registrado");
+                                        res.scope;
+                                    })
+                                    .catch(err => {
+                                        console.error("Error al registrar Service worker: ", err);
+                                    });
+    })
+}
